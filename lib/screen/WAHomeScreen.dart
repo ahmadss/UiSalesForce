@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:salesforce/model/WalletAppModel.dart';
 import 'package:salesforce/screen/MWListTileScreen.dart';
+import 'package:salesforce/screen/WARegisterScreen.dart';
 import 'package:salesforce/utils/WADataGenerator.dart';
 
 class WAHomeScreen extends StatefulWidget {
@@ -43,7 +44,7 @@ class WAHomeScreenState extends State<WAHomeScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               UserAccountsDrawerHeader(
-                decoration: BoxDecoration(color:Colors.yellow[800]),
+                decoration: BoxDecoration(color: Colors.yellow[800]),
                 currentAccountPicture: CachedNetworkImage(
                   imageUrl:
                       'https://miro.medium.com/max/2048/0*0fClPmIScV5pTLoE.jpg',
@@ -109,23 +110,28 @@ class WAHomeScreenState extends State<WAHomeScreen> {
                         border: Border.all(color: Colors.grey.withOpacity(0.2)),
                       ),
                       alignment: Alignment.center,
-                      child: Stack(
-                        alignment: AlignmentDirectional.topEnd,
-                        children: [
-                          Icon(Icons.sync_rounded, color: Colors.grey),
-                          Positioned(
-                            top: 3,
-                            right: 3,
-                            child: Container(
-                              width: 8,
-                              height: 8,
-                              decoration: BoxDecoration(
-                                color: Color(0xFFFF7426),
-                                shape: BoxShape.circle,
+                      child: InkWell(
+                        onTap: () {
+                          WARegisterScreen().launch(context);
+                        },
+                        child: Stack(
+                          alignment: AlignmentDirectional.topEnd,
+                          children: [
+                            Icon(Icons.sync_rounded, color: Colors.grey),
+                            Positioned(
+                              top: 3,
+                              right: 3,
+                              child: Container(
+                                width: 8,
+                                height: 8,
+                                decoration: BoxDecoration(
+                                  color: Color(0xFFFF7426),
+                                  shape: BoxShape.circle,
+                                ),
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     )
                   ],
