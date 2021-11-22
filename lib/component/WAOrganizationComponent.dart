@@ -34,27 +34,58 @@ class WAOrganizationComponentState extends State<WAOrganizationComponent> {
     return Container(
       padding: EdgeInsets.all(8),
       margin: EdgeInsets.only(bottom: 16),
-      decoration: boxDecorationRoundedWithShadow(16, backgroundColor: Colors.white),
+      decoration:
+          boxDecorationRoundedWithShadow(16, backgroundColor: Colors.white),
       child: Row(
         children: [
-          Container(
-            width: 60,
-            height: 60,
-            alignment: Alignment.center,
-            decoration: boxDecorationWithRoundedCorners(
-              borderRadius: BorderRadius.circular(16),
-              backgroundColor: widget.organizationModel!.color!.withOpacity(0.1),
-            ),
-            child: ImageIcon(AssetImage('${widget.organizationModel!.image!.validate()}'), size: 30, color: widget.organizationModel!.color!),
-          ),
           16.width,
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('${widget.organizationModel!.title.validate()}', style: boldTextStyle(), textAlign: TextAlign.center),
-              4.height,
-              Text('${widget.organizationModel!.subTitle.validate()}', style: secondaryTextStyle(), textAlign: TextAlign.center),
+              Row(children: [
+                Text('${widget.organizationModel!.title.validate()}',
+                    style: boldTextStyle(), textAlign: TextAlign.center),
+                4.height,
+                Text('${widget.organizationModel!.subTitle.validate()}',
+                    style: secondaryTextStyle(), textAlign: TextAlign.center),
+              ]),
+              3.height,
+              Divider(color: Colors.black),
+              3.height,
+              Row(children: [
+                Text('${widget.organizationModel!.title2.validate()}',
+                    style: boldTextStyle(), textAlign: TextAlign.center),
+                4.height,
+                Text('${widget.organizationModel!.subTitle2.validate()}',
+                    style: secondaryTextStyle(), textAlign: TextAlign.center),
+              ]),
+              3.height,
+              Row(children: [
+                Text('${widget.organizationModel!.title3.validate()}',
+                    style: boldTextStyle(), textAlign: TextAlign.center),
+                4.height,
+                Text('${widget.organizationModel!.subTitle3.validate()}',
+                    style: secondaryTextStyle(), textAlign: TextAlign.center),
+              ]),
+              3.height,
+              Row(children: [
+                Text('${widget.organizationModel!.title4.validate()}',
+                    style: boldTextStyle(), textAlign: TextAlign.center),
+                4.height,
+                Text('${widget.organizationModel!.subTitle4.validate()}',
+                    style: secondaryTextStyle(), textAlign: TextAlign.center),
+              ]),
+              3.height,
+              Divider(color: Colors.black),
+              3.height,
+              Row(children: [
+                Text('${widget.organizationModel!.title5.validate()}',
+                    style: boldTextStyle(), textAlign: TextAlign.center),
+                4.height,
+                Text('${widget.organizationModel!.subTitle5.validate()}',
+                    style: secondaryTextStyle(), textAlign: TextAlign.center),
+              ])
             ],
           ).expand(),
         ],

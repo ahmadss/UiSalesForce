@@ -36,8 +36,8 @@ class WAOperationComponentState extends State<WAOperationComponent> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            width: 60,
-            height: 60,
+            width: 100,
+            height: 100,
             alignment: Alignment.center,
             decoration: boxDecorationRoundedWithShadow(
               16,

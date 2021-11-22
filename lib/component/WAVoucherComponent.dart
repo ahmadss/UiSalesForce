@@ -47,10 +47,10 @@ class WAVoucherComponentState extends State<WAVoucherComponent> {
             fit: BoxFit.cover,
           ).cornerRadiusWithClipRRect(12),
           8.height,
-          Text('${widget.voucherModel!.discountText!}', style: boldTextStyle(), maxLines: 1),
+          Text(''),
           Text('${widget.voucherModel!.title!}', style: secondaryTextStyle(), maxLines: 1),
           8.height,
-          Text('${widget.voucherModel!.expireTime!}', style: boldTextStyle(size: 14, color: WAPrimaryColor), maxLines: 1),
+          Text(''),
         ],
       ),
     );

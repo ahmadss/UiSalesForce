@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:salesforce/screen/WADashboardScreen.dart';
+import 'package:salesforce/screen/WAHomeScreenSales.dart';
 import 'package:salesforce/utils/WAColors.dart';
 import 'package:salesforce/utils/WAWidgets.dart';
 
@@ -101,7 +102,8 @@ class WALoginScreenState extends State<WALoginScreen> {
                                     shapeBorder: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
                                     width: context.width(),
                                     onTap: () {
-                                       WADashboardScreen().launch(context);
+                                       // WADashboardScreen().launch(context);
+                                       WAHomeScreenSales().launch(context);
                                       // WAEditProfileScreen(isEditProfile: false).launch(context);
                                     }).paddingOnly(left: context.width() * 0.1, right: context.width() * 0.1),
                                 30.height,

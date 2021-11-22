@@ -58,10 +58,32 @@ class WAOrganizationModel {
   String? image;
   String? title;
   String? subTitle;
+  String? title2;
+  String? subTitle2;
+  String? title3;
+  String? subTitle3;
+  String? title4;
+  String? subTitle4;
+  String? title5;
+  String? subTitle5;
   Color? color;
 
   WAOrganizationModel({this.image, this.title, this.subTitle, this.color});
+
+  WAOrganizationModel.fromModel({
+      this.title,
+      this.subTitle,
+      this.title2,
+      this.subTitle2,
+      this.title3,
+      this.subTitle3,
+      this.title4,
+      this.subTitle4,
+      this.title5,
+      this.subTitle5});
 }
+
+
 
 class WAWalletUserModel {
   String? image;

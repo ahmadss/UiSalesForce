@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:salesforce/model/WalletAppModel.dart';
+import 'package:salesforce/screen/WAListProduckScreen.dart';
 
 List<String?> waMonthList = <String?>["Jan", "Feb", "Mar", "April", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
 List<String?> waYearList = <String?>["1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2020", "2021"];
@@ -74,11 +75,11 @@ List<WABillPayModel> waBillPayList() {
 
 List<WAOrganizationModel> waOrganizationList() {
   List<WAOrganizationModel> list = [];
-  list.add(WAOrganizationModel(color: Colors.blue, image: 'images/walletApp/wa_water.png', title: 'Eco Water', subTitle: 'Water Supplier'));
-  list.add(WAOrganizationModel(color: Colors.yellow, image: 'images/walletApp/wa_electricity.png', title: 'bolt Powergrid', subTitle: 'Electricity Supplier'));
-  list.add(WAOrganizationModel(color: Colors.pink, image: 'images/walletApp/wa_internet.png', title: 'Nina Network', subTitle: 'Internet Supplier'));
-  list.add(WAOrganizationModel(color: Colors.yellow, image: 'images/walletApp/wa_electricity.png', title: 'Green Energy ', subTitle: 'Electricity Supplier'));
-  list.add(WAOrganizationModel(color: Colors.pink, image: 'images/walletApp/wa_internet.png', title: 'Express Internet', subTitle: 'Internet Supplier'));
+  list.add(WAOrganizationModel.fromModel(title: 'Belanja : ', subTitle: '2021-11-03 12:11:00', title2: 'Document No : ', subTitle2: '0F/21/11/100002', title3: 'Busines Partner : ', subTitle3: 'Atlas MDN', title4: 'Standard Order : ', subTitle4: ' - ', title5: 'Total Belanja : ', subTitle5: 'Rp. 450.000'));
+  list.add(WAOrganizationModel.fromModel(title: 'Belanja : ', subTitle: '2021-11-03 12:11:00', title2: 'Document No : ', subTitle2: '0F/21/11/100002', title3: 'Busines Partner : ', subTitle3: 'Atlas MDN', title4: 'Standard Order : ', subTitle4: ' - ', title5: 'Total Belanja : ', subTitle5: 'Rp. 450.000'));
+  list.add(WAOrganizationModel.fromModel(title: 'Belanja : ', subTitle: '2021-11-03 12:11:00', title2: 'Document No : ', subTitle2: '0F/21/11/100002', title3: 'Busines Partner : ', subTitle3: 'Atlas MDN', title4: 'Standard Order : ', subTitle4: ' - ', title5: 'Total Belanja : ', subTitle5: 'Rp. 450.000'));
+  list.add(WAOrganizationModel.fromModel(title: 'Belanja : ', subTitle: '2021-11-03 12:11:00', title2: 'Document No : ', subTitle2: '0F/21/11/100002', title3: 'Busines Partner : ', subTitle3: 'Atlas MDN', title4: 'Standard Order : ', subTitle4: ' - ', title5: 'Total Belanja : ', subTitle5: 'Rp. 450.000'));
+  list.add(WAOrganizationModel.fromModel(title: 'Belanja : ', subTitle: '2021-11-03 12:11:00', title2: 'Document No : ', subTitle2: '0F/21/11/100002', title3: 'Busines Partner : ', subTitle3: 'Atlas MDN', title4: 'Standard Order : ', subTitle4: ' - ', title5: 'Total Belanja : ', subTitle5: 'Rp. 450.000'));
   return list;
 }
 
@@ -120,15 +121,50 @@ List<WATransactionModel> waCategoriesList() {
   return list;
 }
 
+
+List<WAOperationsModel> waOperationList() {
+  List<WAOperationsModel> operationModel = [];
+  operationModel.add(WAOperationsModel(
+    color: Color(0xFF6C56F9),
+    title: 'Tekiro',
+    image: 'images/walletApp/wa_transfer.png',
+    widget: WAListproduckScreen(),
+  ));
+
+  operationModel.add(WAOperationsModel(
+    color: Color(0xFFFF7426),
+    title: 'Ryu Accessories',
+    image: 'images/walletApp/wa_voucher.png',
+  ));
+  operationModel.add(WAOperationsModel(
+    color: Color(0xFF6C56F9),
+    title: 'Ryu Engine',
+    image: 'images/walletApp/wa_ticket.png',
+    widget: WAListproduckScreen(),
+  ));
+  operationModel.add(WAOperationsModel(
+    color: Color(0xFF26C884),
+    title: 'Ryu Powertool',
+    image: 'images/walletApp/wa_bill_pay.png',
+    widget: WAListproduckScreen(),
+  ));
+  operationModel.add(WAOperationsModel(
+    color: Color(0xFF6C56F9),
+    title: 'Rexco',
+    image: 'images/walletApp/wa_ticket.png',
+    widget: WAListproduckScreen(),
+  ));
+
+
+  return operationModel;
+}
+
 List<WAVoucherModel> waVouchersList() {
   List<WAVoucherModel> list = [];
-  list.add(WAVoucherModel(image: 'images/walletApp/wa_zara.png', title: 'ZARA Fashion', discountText: '10% Off', expireTime: 'Expires on 15 June', pointsText: 'For 1500 points'));
-  list.add(WAVoucherModel(image: 'images/walletApp/wa_macdonals.jpeg', title: 'Mcdonald\'s', discountText: '5% Off', expireTime: 'Expires on 20 June', pointsText: 'For 600 points'));
-  list.add(WAVoucherModel(image: 'images/walletApp/wa_macdonals.jpeg', title: 'Mcdonald\'s', discountText: '5% Off', expireTime: 'Expires on 20 June', pointsText: 'For 600 points'));
-  list.add(WAVoucherModel(image: 'images/walletApp/wa_zara.png', title: 'ZARA Fashion', discountText: '10% Off', expireTime: 'Expires on 15 June', pointsText: 'For 1500 points'));
-  list.add(WAVoucherModel(image: 'images/walletApp/wa_zara.png', title: 'ZARA Fashion', discountText: '10% Off', expireTime: 'Expires on 15 June', pointsText: 'For 1500 points'));
-  list.add(WAVoucherModel(image: 'images/walletApp/wa_macdonals.jpeg', title: 'Mcdonald\'s', discountText: '5% Off', expireTime: 'Expires on 20 June', pointsText: 'For 600 points'));
-  list.add(WAVoucherModel(image: 'images/walletApp/wa_macdonals.jpeg', title: 'Mcdonald\'s', discountText: '5% Off', expireTime: 'Expires on 20 June', pointsText: 'For 600 points'));
-  list.add(WAVoucherModel(image: 'images/walletApp/wa_zara.png', title: 'ZARA Fashion', discountText: '10% Off', expireTime: 'Expires on 15 June', pointsText: 'For 1500 points'));
+  list.add(WAVoucherModel(image: 'images/walletApp/wa_zara.png', title: 'Tekiro', discountText: '10% Off', expireTime: 'Expires on 15 June', pointsText: 'For 1500 points'));
+  list.add(WAVoucherModel(image: 'images/walletApp/wa_macdonals.jpeg', title: 'Ryu Accesscoris', discountText: '5% Off', expireTime: 'Expires on 20 June', pointsText: 'For 600 points'));
+  list.add(WAVoucherModel(image: 'images/walletApp/wa_macdonals.jpeg', title: 'Ryu Engine', discountText: '5% Off', expireTime: 'Expires on 20 June', pointsText: 'For 600 points'));
+  list.add(WAVoucherModel(image: 'images/walletApp/wa_zara.png', title: 'Ryu Powertool', discountText: '10% Off', expireTime: 'Expires on 15 June', pointsText: 'For 1500 points'));
+  // list.add(WAVoucherModel(image: 'images/walletApp/wa_zara.png', title: 'Ryu Welding', discountText: '10% Off', expireTime: 'Expires on 15 June', pointsText: 'For 1500 points'));
   return list;
 }
