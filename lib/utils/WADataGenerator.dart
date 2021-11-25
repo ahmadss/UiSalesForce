@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:salesforce/model/WalletAppModel.dart';
-import 'package:salesforce/screen/WAListProduckScreen.dart';
+import 'package:salesforce/screen/WAListTransactionScreen.dart';
 
 List<String?> waMonthList = <String?>["Jan", "Feb", "Mar", "April", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
 List<String?> waYearList = <String?>["1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2020", "2021"];
@@ -20,6 +20,28 @@ List<WAWalkThroughModel> waWalkThroughList() {
   return list;
 }
 
+List<WAProductModel> waTransactionList() {
+  List<WAProductModel> transactionList = [];
+  transactionList.add(WAProductModel(
+    color: Color(0xFFFF7426),
+    title: 'Send Money to',
+    image: 'images/walletApp/wa_bill_pay.png',
+    balance: '-\Rp 200,000',
+    name: 'Ryu Un Drill 10 MM',
+    time: '',
+  ));
+  transactionList.add(WAProductModel(
+    color: Color(0xFFFF7426),
+    title: 'Send Money to',
+    image: 'images/walletApp/wa_bill_pay.png',
+    balance: '-\Rp 250,000',
+    name: 'Ryu Un Drill 20 MM',
+    time: '',
+  ));
+
+  return transactionList;
+}
+
 List<WACardModel> waCardList() {
   List<WACardModel> cardList = [];
   cardList.add(WACardModel(balance: '\$12,00,000', cardNumber: '123 985 7654327', date: '03/23', color: Color(0xFF6C56F9)));
@@ -29,26 +51,6 @@ List<WACardModel> waCardList() {
 }
 
 
-List<WATransactionModel> waTransactionList() {
-  List<WATransactionModel> transactionList = [];
-  transactionList.add(WATransactionModel(
-    color: Color(0xFFFF7426),
-    title: 'Send Money to',
-    image: 'images/walletApp/wa_bill_pay.png',
-    balance: '-\$20,000',
-    name: 'James',
-    time: 'Today 5:30 PM',
-  ));
-  transactionList.add(WATransactionModel(
-    color: Color(0xFF26C884),
-    title: 'Salary from',
-    image: 'images/walletApp/wa_voucher.png',
-    balance: '+\$50,000',
-    name: 'Unbox Digital',
-    time: 'Today 6:30 PM',
-  ));
-  return transactionList;
-}
 
 List<WARecentPayeesModel> waRecentPayeesList() {
   List<WARecentPayeesModel> list = [];
@@ -116,8 +118,8 @@ List<WAWalletUserModel> waWalletUserList() {
 
 List<WATransactionModel> waCategoriesList() {
   List<WATransactionModel> list = [];
-  list.add(WATransactionModel(color: Color(0xFF26C884), title: 'Clothes', image: 'images/walletApp/wa_clothes.png', balance: '-\$10,000', time: 'Today 12:30 PM'));
-  list.add(WATransactionModel(color: Color(0xFFFF7426), title: 'Grocery', image: 'images/walletApp/wa_food.png', balance: '-\$8,000', time: 'Today 1:02 PM'));
+  list.add(WATransactionModel(productname: 'Ryu (UN) DRILL 100 MM', itemcore: "RDR10-3RE", price: "Rp 225.000", quantity: "1", amount: "Rp 225.000"));
+  list.add(WATransactionModel(productname: 'Ryu (UN) ANGLE GRINDER', itemcore: "RSG100-2", price: "Rp 242.000", quantity: "1", amount: "Rp 242.000"));
   return list;
 }
 
@@ -128,31 +130,32 @@ List<WAOperationsModel> waOperationList() {
     color: Color(0xFF6C56F9),
     title: 'Tekiro',
     image: 'images/walletApp/wa_transfer.png',
-    widget: WAListproduckScreen(),
+    widget: WAListTransactionScreen(),
   ));
 
   operationModel.add(WAOperationsModel(
     color: Color(0xFFFF7426),
     title: 'Ryu Accessories',
     image: 'images/walletApp/wa_voucher.png',
+    widget: WAListTransactionScreen(),
   ));
   operationModel.add(WAOperationsModel(
     color: Color(0xFF6C56F9),
     title: 'Ryu Engine',
     image: 'images/walletApp/wa_ticket.png',
-    widget: WAListproduckScreen(),
+    widget: WAListTransactionScreen(),
   ));
   operationModel.add(WAOperationsModel(
     color: Color(0xFF26C884),
     title: 'Ryu Powertool',
     image: 'images/walletApp/wa_bill_pay.png',
-    widget: WAListproduckScreen(),
+    widget: WAListTransactionScreen(),
   ));
   operationModel.add(WAOperationsModel(
     color: Color(0xFF6C56F9),
     title: 'Rexco',
     image: 'images/walletApp/wa_ticket.png',
-    widget: WAListproduckScreen(),
+    widget: WAListTransactionScreen(),
   ));
 
 
@@ -167,4 +170,51 @@ List<WAVoucherModel> waVouchersList() {
   list.add(WAVoucherModel(image: 'images/walletApp/wa_zara.png', title: 'Ryu Powertool', discountText: '10% Off', expireTime: 'Expires on 15 June', pointsText: 'For 1500 points'));
   // list.add(WAVoucherModel(image: 'images/walletApp/wa_zara.png', title: 'Ryu Welding', discountText: '10% Off', expireTime: 'Expires on 15 June', pointsText: 'For 1500 points'));
   return list;
+}
+
+const BaseUrl = 'https://assets.iqonic.design/old-themeforest-images/prokit';
+
+
+const grocery_ic_ginger = "$BaseUrl/images/grocery/grocery_ic_ginger.png";
+const grocery_ic_graps = "$BaseUrl/images/grocery/grocery_ic_graps.png";
+const grocery_ic_apple = "$BaseUrl/images/grocery/grocery_ic_apple.png";
+const grocery_ic_bg_drinks = "$BaseUrl/images/grocery/grocery_ic_bg_drinks.jpg";
+const grocery_ic_carts = "$BaseUrl/images/grocery/grocery_ic_carts.png";
+const grocery_logo = "$BaseUrl/images/grocery/grocery_logo.png";
+const grocery_ic_logo = "images/grocery/grocery_ic_logo.png";
+const grocery_ic_carrot = "$BaseUrl/images/grocery/grocery_ic_carrot.png";
+
+List<ProductModel> storeMemberItems() {
+  List<ProductModel> mProductList = [];
+  ProductModel item1 = ProductModel();
+  item1.img = grocery_ic_ginger;
+  item1.name = "Ginger";
+  item1.price = "\$60.00";
+  item1.weight = "100G";
+
+  ProductModel item2 = ProductModel();
+  item2.img = grocery_ic_graps;
+  item2.name = "Grapes";
+  item2.price = "\$40.0";
+  item2.weight = "100G";
+
+
+  ProductModel item4 = ProductModel();
+  item4.img = grocery_ic_apple;
+  item4.name = "Apples";
+  item4.price = "\$300.0";
+  item4.weight = "1KG";
+
+  ProductModel item5 = ProductModel();
+  item5.img = grocery_ic_carrot;
+  item5.name = "Carrots";
+  item5.price = "\$200.0";
+  item5.weight = "1KG";
+
+  mProductList.add(item5);
+  mProductList.add(item4);
+  mProductList.add(item1);
+  mProductList.add(item2);
+
+  return mProductList;
 }

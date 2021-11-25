@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:salesforce/component/WAOperationComponent.dart';
-import 'package:salesforce/component/WATransactionComponent.dart';
-import 'package:salesforce/component/WAVoucherComponent.dart';
 import 'package:salesforce/model/WalletAppModel.dart';
 import 'package:salesforce/utils/WADataGenerator.dart';
 

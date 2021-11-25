@@ -14,7 +14,6 @@ class WAHomeScreen extends StatefulWidget {
 }
 
 class WAHomeScreenState extends State<WAHomeScreen> {
-  List<WATransactionModel> transactionList = waTransactionList();
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
 
   @override

@@ -36,6 +36,17 @@ class WAOperationsModel {
 }
 
 class WATransactionModel {
+  String? productname;
+  String? itemcore;
+  String? price;
+  String? quantity;
+  String? amount;
+
+  WATransactionModel({
+      this.productname, this.itemcore, this.price, this.quantity, this.amount});
+}
+
+class WAProductModel {
   String? image;
   Color? color;
   String? title;
@@ -43,7 +54,7 @@ class WATransactionModel {
   String? time;
   String? balance;
 
-  WATransactionModel({this.image, this.color, this.title, this.name, this.time, this.balance});
+  WAProductModel({this.image, this.color, this.title, this.name, this.time, this.balance});
 }
 
 class WABillPayModel {
