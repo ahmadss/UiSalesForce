@@ -36,7 +36,8 @@ class WADetailTransactionScreenState extends State<WADetailTransactionScreen> {
       child: Scaffold(
         extendBodyBehindAppBar: true,
         appBar: AppBar(
-          backgroundColor: Colors.transparent,
+          shape: Border(bottom: BorderSide(color: Colors.grey, width: 1)),
+          backgroundColor: Colors.white,
           title: Text('Power Tools',
               style: boldTextStyle(color: Colors.black, size: 20)),
           centerTitle: true,
@@ -70,9 +71,7 @@ class WADetailTransactionScreenState extends State<WADetailTransactionScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    5.height,
-                    Text('Inprogress', style: boldTextStyle(size: 16))
-                        .paddingOnly(left: 16, right: 16, top: 16),
+                    20.height,
                     Divider(color: Colors.black),
                     Container(
                         margin: EdgeInsets.only(left: 10),
@@ -139,7 +138,7 @@ class WADetailTransactionScreenState extends State<WADetailTransactionScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text('Payment Detail : ',
-                              style: boldTextStyle(size: 14)),
+                              style: boldTextStyle(size: 15)),
                           Divider(color: Colors.black),
                           Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -181,13 +180,15 @@ class WADetailTransactionScreenState extends State<WADetailTransactionScreen> {
                                 Text('Rp 0 '),
                               ]),
                           Divider(color: Colors.black),
+                          8.height,
                           Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text('Grand Total : ',
-                                    style: boldTextStyle(size: 15)),
-                                Text('Rp 394.000', style: boldTextStyle(size: 15)),
-                              ])
+                                    style: boldTextStyle(size: 16)),
+                                Text('Rp 394.000', style: boldTextStyle(size: 17)),
+                              ]),
+                          8.height
                         ]).paddingOnly(left: 16, right: 16),
 
                   ),

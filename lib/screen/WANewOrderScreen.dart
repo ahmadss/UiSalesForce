@@ -42,7 +42,8 @@ class WANewOrderScreenState extends State<WANewOrderScreen> {
       child: Scaffold(
         extendBodyBehindAppBar: true,
         appBar: AppBar(
-          backgroundColor: Colors.transparent,
+          backgroundColor: Colors.white,
+          shape: Border(bottom: BorderSide(color: Colors.grey, width: 1)),
           title: Text('New Order Form',
               style: boldTextStyle(color: Colors.black, size: 20)),
           actions: [
@@ -92,7 +93,6 @@ class WANewOrderScreenState extends State<WANewOrderScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                16.height,
                 SettingItemWidget(
                     title: 'Your Busines Partner',
                     decoration: boxDecorationRoundedWithShadow(12),
@@ -102,22 +102,13 @@ class WANewOrderScreenState extends State<WANewOrderScreen> {
                         return WAListCustomerDialog();
                       });
                     }).paddingAll(16),
-                16.height,
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text('Transactions', style: boldTextStyle(size: 20)),
-                    Icon(Icons.play_arrow, color: Colors.grey),
-                  ],
-                ).paddingOnly(left: 16, right: 16),
-                16.height,
                 Column(
                   children: transactionList.map((transactionItem) {
                     return WAProductComponent(
                         transactionModel: transactionItem);
                   }).toList(),
                 ).paddingAll(16),
-                55.height,
+                130.height,
                 Container(
                   decoration: BoxDecoration(color: Colors.grey[100]),
                   child: new Expanded(

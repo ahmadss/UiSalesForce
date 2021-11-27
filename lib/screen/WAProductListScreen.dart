@@ -61,6 +61,7 @@ class WAProductlistScreenState extends State<WAProductListScreen> {
       child: Scaffold(
         extendBodyBehindAppBar: true,
         appBar: AppBar(
+          shape: Border(bottom: BorderSide(color: Colors.grey, width: 1)),
           backgroundColor: Colors.white,
           title: TextFormField(
             style: primaryTextStyle(height: 0),

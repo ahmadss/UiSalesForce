@@ -43,9 +43,10 @@ class WAListTransactionScreenState extends State<WAListTransactionScreen> {
           extendBodyBehindAppBar: true,
           backgroundColor: Colors.transparent,
           appBar: PreferredSize(
-            preferredSize: Size.fromHeight(100.0), // here the desired height
+            preferredSize: Size.fromHeight(50.0), // here the desired height
             child: AppBar(
-              toolbarHeight: 100,
+              shape: Border(bottom: BorderSide(color: Colors.grey, width: 1)),
+              toolbarHeight: 50,
               backgroundColor: Colors.white,
               title: Container(
                 margin: EdgeInsets.only(top: 10),
@@ -55,41 +56,12 @@ class WAListTransactionScreenState extends State<WAListTransactionScreen> {
                     style: boldTextStyle(color: Colors.black, size: 20),
                   ),
                   10.height,
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Container(
-                        width: 300,
-                        height: 60,
-                        child: TextField(
-                          style: primaryTextStyle(),
-                          cursorColor: Colors.white,
-                          decoration: InputDecoration(
-                            border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(5.0),
-                                borderSide: BorderSide(color: Colors.black)),
-                            focusedBorder: new OutlineInputBorder(
-                              borderRadius: new BorderRadius.circular(5.0),
-                              borderSide: BorderSide(color: Colors.black87),
-                            ),
-                            prefixIcon: Icon(Icons.search),
-                            hintText: "Search Customer..",
-                            hintStyle: TextStyle(color: Colors.grey),
-                            alignLabelWithHint: false,
-                            fillColor: Colors.white,
-                            filled: true,
-                          ),
-                          textInputAction: TextInputAction.done,
-                        ),
-                      ),
-                    ],
-                  ),
                 ]),
               ),
-              leading:  Icon(
-                  Icons.menu,
-                  color: Colors.black12,
-                ).onTap(() {
+              leading: Icon(
+                Icons.arrow_back,
+                color: Colors.black12,
+              ).onTap(() {
                 finish(context);
               }),
               centerTitle: true,
@@ -106,18 +78,43 @@ class WAListTransactionScreenState extends State<WAListTransactionScreen> {
                     fit: BoxFit.cover)),
             child: SingleChildScrollView(
               child: Column(
-                children: [
-                  ListView.builder(
-                    scrollDirection: Axis.vertical,
-                    itemCount: organizationList.length,
-                    shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(),
-                    itemBuilder: (context, index) {
-                      return Cart(organizationList[index], index);
-                    },
+                children: <Widget>[
+                  55.height,
+                  TextField(
+                    style: primaryTextStyle(),
+                    cursorColor: Colors.white,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(5.0),
+                          borderSide: BorderSide(color: Colors.black)),
+                      focusedBorder: new OutlineInputBorder(
+                        borderRadius: new BorderRadius.circular(5.0),
+                        borderSide: BorderSide(color: Colors.black87),
+                      ),
+                      prefixIcon: Icon(Icons.search),
+                      hintText: "Search Customer..",
+                      hintStyle: TextStyle(color: Colors.grey),
+                      alignLabelWithHint: false,
+                      fillColor: Colors.white,
+                      filled: true,
+                    ),
+                    textInputAction: TextInputAction.done,
+                  ).paddingOnly(left: 10, right: 10),
+                  MediaQuery.removePadding(
+                    context: context,
+                    removeTop: true,
+                    child: ListView.builder(
+                      scrollDirection: Axis.vertical,
+                      itemCount: organizationList.length,
+                      shrinkWrap: true,
+                      physics: NeverScrollableScrollPhysics(),
+                      itemBuilder: (context, index) {
+                        return Cart(organizationList[index], index);
+                      },
+                    ).paddingAll(10),
                   ),
                 ],
-              ).paddingAll(16),
+              ),
             ),
           ),
           floatingActionButton: new FloatingActionButton(
@@ -188,31 +185,27 @@ class Cart extends StatelessWidget {
               3.height,
               Divider(color: Colors.black),
               3.height,
-              Row(children: [
-                Text('${widget!.title5.validate()}',
-                    style: boldTextStyle(), textAlign: TextAlign.center),
-                4.height,
-                Text('${widget!.subTitle5.validate()}',
-                    style: secondaryTextStyle(), textAlign: TextAlign.center),
+              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+                Row(children: [
+                  Text('${widget!.title5.validate()}',
+                      style: boldTextStyle(), textAlign: TextAlign.center),
+                  4.height,
+                  Text('${widget!.subTitle5.validate()}',
+                      style: secondaryTextStyle(), textAlign: TextAlign.center),
+                ]),
+                AppButton(
+                  color: Colors.green[600],
+                  width: 90,
+                  height: 25,
+                  shapeBorder: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30)),
+                  text: "Detail",
+                  onTap: () {
+                    WADetailTransactionScreen().launch(context);
+                  },
+                  textStyle: boldTextStyle(color: Colors.white),
+                ),
               ]),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(""),
-                  AppButton(
-                    color: Colors.green[600],
-                    width: 90,
-                    height: 30,
-                    shapeBorder: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30)),
-                    text: "Detail",
-                    onTap: () {
-                      WADetailTransactionScreen().launch(context);
-                    },
-                    textStyle: boldTextStyle(color: Colors.white),
-                  ),
-                ],
-              )
             ],
           ).expand(),
         ],

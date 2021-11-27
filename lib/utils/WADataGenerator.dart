@@ -158,6 +158,13 @@ List<WAOperationsModel> waOperationList() {
     widget: WAListTransactionScreen(),
   ));
 
+  operationModel.add(WAOperationsModel(
+    color: Color(0xFF6C56F9),
+    title: 'Rexco Oil',
+    image: 'images/walletApp/wa_ticket.png',
+    widget: WAListTransactionScreen(),
+  ));
+
 
   return operationModel;
 }
